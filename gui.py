@@ -29,7 +29,10 @@ def execute_app():
         # st.legacy_caching.clear_cache()
         st.experimental_rerun()
 
-    col1, col2, col3
+    col1, col2, col3 = st.columns(3)
+
+    with col2:
+        st.title("New Liquidity Pools Monitor")
     # Display data from the selected database
     data = load_data(db_urls[db_choice])
     if not data.empty:
