@@ -18,8 +18,8 @@ def execute_app():
     st.set_page_config(layout="wide")
     st.sidebar.header("Database Selection and Actions")
     db_urls = {
-        "Database 1": "https://pwagner.eu.pythonanywhere.com/static/token_database.csv",
-        "Database 2": "https://pwagner.eu.pythonanywhere.com/static/token_database_all.csv"
+        "Database 1": "https://pwagner.eu.pythonanywhere.com/scripts/static/token_database.csv",
+        "Database 2": "https://pwagner.eu.pythonanywhere.com/scripts/static/token_database_all.csv"
     }
     db_choice = st.sidebar.selectbox("Choose the database:", options=list(db_urls.keys()))
 
