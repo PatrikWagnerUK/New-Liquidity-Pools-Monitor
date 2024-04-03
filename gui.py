@@ -23,12 +23,6 @@ def execute_app():
     }
     db_choice = st.sidebar.selectbox("Choose the database:", options=list(db_urls.keys()))
 
-    # Button for refreshing data
-    if st.sidebar.button("Refresh Data"):
-        # This will clear the cache and force all cached functions to rerun
-        # st.legacy_caching.clear_cache()
-        st.experimental_rerun()
-
     col1, col2, col3 = st.columns(3)
 
     with col2:
@@ -39,6 +33,13 @@ def execute_app():
         st.dataframe(data)
     else:
         st.write("No data available or file not found.")
+    
+    # Button for refreshing data
+    if st.sidebar.button("Refresh Data"):
+        # This will clear the cache and force all cached functions to rerun
+        # st.legacy_caching.clear_cache()
+        # st.experimental_rerun()
+        data = load_data(db_urls[db_choice])
 
 if __name__ == "__main__":
     execute_app()
