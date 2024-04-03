@@ -91,9 +91,9 @@ def collect_and_filter_data():
     if pools:
         tokens_with_all_criteria, tokens_excluding_some_criteria = filter_tokens(pools.get('data', []))
         if tokens_with_all_criteria:
-            write_to_csv(tokens_with_all_criteria, 'C:/Users/Patrik/Coding/crypto/patrik_bot/New Pools Tool/token_database.csv')
+            write_to_csv(tokens_with_all_criteria, './token_database.csv')
         if tokens_excluding_some_criteria:
-            write_to_csv(tokens_excluding_some_criteria, 'C:/Users/Patrik/Coding/crypto/patrik_bot/New Pools Tool/token_database_all.csv')
+            write_to_csv(tokens_excluding_some_criteria, './token_database_all.csv')
 
 def filter_recent_tokens(file_path, hours=24):
     df = pd.read_csv(file_path)
