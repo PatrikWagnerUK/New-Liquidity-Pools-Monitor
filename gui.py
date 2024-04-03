@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 
 # Function to load data from URLs with caching and additional error handling
-@st.cache_data()
+# @st.cache_data()
 def load_data(url):
     try:
         df = pd.read_csv(url)
